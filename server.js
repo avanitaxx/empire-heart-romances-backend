@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(express.json()); // Allow JSON body
+// Make sure this line is there to handle JSON data
+app.use(express.json());
 
 let books = [
   { id: 1, title: 'Empire of Dreams', author: 'Ava Sky' },
@@ -10,16 +11,16 @@ let books = [
   { id: 3, title: 'Romance Reborn', author: 'Luna Frost' }
 ];
 
-// GET existing books
+// GET route to get books
 app.get('/api/books', (req, res) => {
-  res.json(books); // This will return the array of books
+  res.json(books); // Return the books array
 });
 
-// POST new book
+// POST route to add books
 app.post('/api/books', (req, res) => {
   const newBook = req.body;
   books.push(newBook);
-  res.status(201).json(newBook); // This sends back the new book
+  res.status(201).json(newBook); // Send back the newly added book
 });
 
 app.listen(port, () => {
