@@ -1,5 +1,3 @@
-app.post('/api/books', (req, res) => {
-  const newBook = req.body;
-  books.push(newBook);
-  res.status(201).json(newBook);
+app.get('/api/books', (req, res) => {
+  res.json({ message: 'Books endpoint is working!' });
 });
