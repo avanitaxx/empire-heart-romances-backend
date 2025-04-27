@@ -1,11 +1,16 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
-  res.send('Empire Heart Backend is running!');
+  res.send('Empire Heart Backend is working!');
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is listening on port ${PORT}`);
+// New route added below
+app.get('/api/hello', (req, res) => {
+  res.json({ message: 'Hello, Empire Heart!' });
+});
+
+app.listen(port, () => {
+  console.log(`Server is listening on port ${port}`);
 });
