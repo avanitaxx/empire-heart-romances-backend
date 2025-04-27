@@ -1,0 +1,12 @@
+{
+  "name": "empire-heart-backend",
+  "version": "1.0.0",
+  "description": "Simple backend server for Empire Heart",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
